@@ -13,8 +13,9 @@ export class DomListener {
       const method = getMethodName(listener)
       if (!this[method]) {
         const name = this.name || ''
-        // eslint-disable-next-line max-len
-        throw new Error(`Method ${method} is not implemented in ${name} Component`)
+        throw new Error(
+          `Method ${method} is not implemented in ${name} Component`
+        )
       }
       this[method] = this[method].bind(this)
       // Тоже самое что и addEventListener
